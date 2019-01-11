@@ -22,7 +22,7 @@ public final class PoijiOptions {
     private boolean ignoreHiddenSheets;
     private boolean preferNullOverDefault;
     private DateTimeFormatter dateTimeFormatter;
-    private int rowStart;
+    private int headerStart;
 
     private PoijiOptions() {
         super();
@@ -123,12 +123,12 @@ public final class PoijiOptions {
         return this;
     }
     
-	public int getRowStart() {
-		return rowStart;
+	public int getHeaderStart() {
+		return headerStart;
 	}
 
-	private PoijiOptions setRowStart(int rowStart) {
-		this.rowStart = rowStart;
+	private PoijiOptions setHeaderStart(int rowStart) {
+		this.headerStart = rowStart;
 		return this;
 	}
 
@@ -144,7 +144,7 @@ public final class PoijiOptions {
         private boolean preferNullOverDefault;
         private String datePattern = DEFAULT_DATE_PATTERN;
         private DateTimeFormatter dateTimeFormatter = DEFAULT_DATE_TIME_FORMATTER;
-        private int rowStart = 0;
+        private int headerStart = 0;
 
         private PoijiOptionsBuilder() {
         }
@@ -165,7 +165,7 @@ public final class PoijiOptions {
                     .setTrimCellValue(trimCellValue)
                     .setDateRegex(dateRegex)
                     .setDateLenient(dateLenient)
-                    .setRowStart(rowStart);
+                    .setHeaderStart(headerStart);
         }
 
         public static PoijiOptionsBuilder settings() {
@@ -310,8 +310,8 @@ public final class PoijiOptions {
          * @param int
          * @return this
          */
-        public PoijiOptionsBuilder rowStart(int rowStart) {
-    		this.rowStart = rowStart;
+        public PoijiOptionsBuilder headerStart(int headerStart) {
+    		this.headerStart = headerStart;
     		return this;
     	}
 
